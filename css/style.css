@@ -23,7 +23,7 @@ ul{
   display:block;
   width: 100%;
   background: #333;
-  z-index:9;
+  z-index:110;
   text-align:center;
   color: #f2f2f2;
 }
@@ -31,15 +31,16 @@ ul{
 .header{
   top:0px;
 }
+
 .footer{
   bottom:0px;
 }
 
-/* Menu */
+/* Menu
 .menu{
   position:fixed;
-  margin-top: 50px;
-  z-index: 10;
+  top: 50px;
+  z-index: 120;
 }
 
 .menu li {
@@ -48,6 +49,7 @@ ul{
   padding-left: 20px;
   padding-top: 3px;
 }
+*/
 
 /* Section */
 .section{
@@ -58,13 +60,18 @@ ul{
   background-image: url(https://raw.githubusercontent.com/alvarotrigo/fullPage.js/master/examples/imgs/bg1.jpg);
 }
 
+.carousel
+{
+  width: 100%;
+}
+
 /* Remove the space in carousel*/
-#myCarousel .item .col-xs-3{
+.carousel .item .col-xs-4{
   margin:0px;
   padding:0px;
 }
 
-#myCarousel .col-xs-12{
+.carousel .col-xs-12{
   margin:0px;
   padding:0px;
 }
@@ -74,8 +81,17 @@ ul{
   margin-top: 50px;
 }
 
-.carousel-inner .active.left { left: -25%; }
-.carousel-inner .next        { left:  25%; }
-.carousel-inner .prev    { left: -25%; }
+/* Here we control how much scrolling
+.carousel-inner .active.left { left: -33.3%; }
+.carousel-inner .next        { left:  33.3%; }
+.carousel-inner .prev    { left: -33.3%; }
+*/
 .carousel-control        { width:  4%; }
 .carousel-control.left,.carousel-control.right {margin-left:15px;background-image:none;}
+
+
+/* Cover mode*/
+.header
+{
+  height: 90%;
+}
