@@ -54,6 +54,14 @@ var main = function(){
     }
   });
 
+  $.ajax({
+    url: "https://api.instagram.com/v1/users/709764259/media/recent/?client_id=24fdee6adc7b46a58b50b9e760a6e3de",
+    dataType: 'jsonp',
+    success: function(data){
+      $('#img1').attr("src",(data['data'][0]['images']['low_resolution']['url']));
+      $('#img2').attr("src",(data['data'][1]['images']['low_resolution']['url']));
+    }
+  });
 }
 
 $(document).ready(main);
