@@ -13,8 +13,8 @@ var main = function(){
     navigation:true,
   });
 
-  var isCoverShown = true;
   // Disable scrolling until cover is dismissed
+  var isCoverShown = true;
   fn.fullpage.setAllowScrolling(false);
   fn.fullpage.setKeyboardScrolling(false);
 
@@ -54,14 +54,22 @@ var main = function(){
     }
   });
 
+  $('#mixContainer').mixItUp();
+
+  // Instagram
   $.ajax({
     url: "https://api.instagram.com/v1/users/709764259/media/recent/?client_id=24fdee6adc7b46a58b50b9e760a6e3de",
     dataType: 'jsonp',
-    success: function(data){
-      $('#img1').attr("src",(data['data'][0]['images']['low_resolution']['url']));
-      $('#img2').attr("src",(data['data'][1]['images']['low_resolution']['url']));
+    success: function(response){
+      var a = response['data'];
+      for(var i = 0;i< a.length;i++)
+      {
+        var mixDiv="<div class='mix'><img src='"+a[i]['images']['low_resolution']['url']+"'></div>";
+        $('#mixContainer').append(mixDiv);
+      }
     }
   });
+
 }
 
 $(document).ready(main);

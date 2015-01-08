@@ -95,3 +95,13 @@ ul{
 {
   height: 90%;
 }
+
+.mix
+{
+  display: inline-block;
+}
+
+#mixContainer
+{
+  height:100%;
+}
